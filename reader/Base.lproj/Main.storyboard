@@ -212,25 +212,6 @@
             </objects>
             <point key="canvasLocation" x="907" y="64"/>
         </scene>
-        <!--Media View Controller-->
-        <scene sceneID="JFF-9f-q9e">
-            <objects>
-                <viewController id="2jB-k4-iEo" customClass="CREMediaViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="2jO-WO-DN1"/>
-                        <viewControllerLayoutGuide type="bottom" id="jsb-ff-wRw"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="wG9-ig-4nJ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="hej-iY-P9x"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Kfg-am-CVP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1333" y="-537"/>
-        </scene>
         <!--Detail View Controller - Detail-->
         <scene sceneID="Cn3-H9-jdl">
             <objects>

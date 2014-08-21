@@ -10,7 +10,6 @@
 
 #import "CREEntriesTableViewController.h"
 #import "CREDetailViewController.h"
-#import "CREMediaViewController.h"
 #import "CREFeed.h"
 #import "CREEntry.h"
 #import "CREEntryCell.h"

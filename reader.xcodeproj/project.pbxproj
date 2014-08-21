@@ -27,7 +27,6 @@
 		303B53E519A25FEC00845613 /* CREEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 303B53E419A25FEC00845613 /* CREEntry.m */; };
 		30FC42EE19A4A03000CA025D /* CREAddFeedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FC42ED19A4A03000CA025D /* CREAddFeedTableViewController.m */; };
 		30FC42F119A5EA3100CA025D /* CREEntryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FC42F019A5EA3100CA025D /* CREEntryCell.m */; };
-		30FC42F419A5F51700CA025D /* CREMediaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FC42F319A5F51700CA025D /* CREMediaViewController.m */; };
 		30FC42F619A5F62C00CA025D /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30FC42F519A5F62C00CA025D /* MediaPlayer.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,8 +72,6 @@
 		30FC42ED19A4A03000CA025D /* CREAddFeedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CREAddFeedTableViewController.m; sourceTree = "<group>"; };
 		30FC42EF19A5EA3100CA025D /* CREEntryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CREEntryCell.h; sourceTree = "<group>"; };
 		30FC42F019A5EA3100CA025D /* CREEntryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CREEntryCell.m; sourceTree = "<group>"; };
-		30FC42F219A5F51700CA025D /* CREMediaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CREMediaViewController.h; sourceTree = "<group>"; };
-		30FC42F319A5F51700CA025D /* CREMediaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CREMediaViewController.m; sourceTree = "<group>"; };
 		30FC42F519A5F62C00CA025D /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -209,8 +206,6 @@
 				303B53DA19A252F600845613 /* CREEntriesTableViewController.m */,
 				3009AA4B19A0CA470007E362 /* CREFeedsTableViewController.h */,
 				3009AA4C19A0CA470007E362 /* CREFeedsTableViewController.m */,
-				30FC42F219A5F51700CA025D /* CREMediaViewController.h */,
-				30FC42F319A5F51700CA025D /* CREMediaViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -319,7 +314,6 @@
 				303B53E519A25FEC00845613 /* CREEntry.m in Sources */,
 				303B53E219A2552000845613 /* CREFeed.m in Sources */,
 				30FC42F119A5EA3100CA025D /* CREEntryCell.m in Sources */,
-				30FC42F419A5F51700CA025D /* CREMediaViewController.m in Sources */,
 				303B53DB19A252F600845613 /* CREEntriesTableViewController.m in Sources */,
 				3009AA4D19A0CA470007E362 /* CREFeedsTableViewController.m in Sources */,
 				3009AA4719A0CA470007E362 /* CREAppDelegate.m in Sources */,
