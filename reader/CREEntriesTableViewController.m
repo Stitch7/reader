@@ -6,10 +6,14 @@
 //  Copyright (c) 2014 Christopher Reitz. All rights reserved.
 //
 
+#import <MediaPlayer/MediaPlayer.h>
+
 #import "CREEntriesTableViewController.h"
 #import "CREDetailViewController.h"
+#import "CREMediaViewController.h"
 #import "CREFeed.h"
 #import "CREEntry.h"
+#import "CREEntryCell.h"
 
 @interface CREEntriesTableViewController ()
     @property (strong) NSMutableArray *entries;
@@ -35,9 +39,15 @@
     
     self.entries = [NSMutableArray array];
     
-    self.xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:self.feed.url];
-    [self.xmlParser setDelegate:self];
-    [self.xmlParser parse];
+    NSURLRequest *request = [NSURLRequest requestWithURL:self.feed.url];
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        self.xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:self.feed.url];
+        [self.xmlParser setDelegate:self];
+        [self.xmlParser parse];
+    }];
+    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -69,10 +79,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EntryCell" forIndexPath:indexPath];
+    CREEntryCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EntryCell" forIndexPath:indexPath];
     
-//    cell.textLabel.text = ((CREEntry*)[self.entries objectAtIndex:indexPath.row]).title;
-    cell.textLabel.text = ((CREEntry*)self.entries[indexPath.row]).title;
+    //cell.titleLabel.text = ((CREEntry*)[self.entries objectAtIndex:indexPath.row]).title;
+    cell.titleLabel.text = ((CREEntry*)self.entries[indexPath.row]).title;
+    cell.subtitleLabel.text = ((CREEntry*)self.entries[indexPath.row]).subtitle;
     
     return cell;
 }
@@ -127,12 +138,29 @@
 }
 */
 
+#pragma mark - Table view delegate
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    CREEntry *entry = self.entries[indexPath.row];
+    NSURL *enclosureURL = entry.enclosureURL;
+    
+    MPMoviePlayerViewController *moviePlayer = [[MPMoviePlayerViewController alloc] initWithContentURL:enclosureURL];
+    NSLog(@"Playing %@", enclosureURL);
+    [self presentMoviePlayerViewControllerAnimated:moviePlayer];
+}
+
+
 #pragma mark - XML Parser
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
 {
+    // TODO switch?
     if ([elementName isEqualToString:@"item"]) {
         self.currentEntry = [[CREEntry alloc] init];
+    } else if ([elementName isEqualToString:@"enclosure"]) {
+        //self.currentEntry.enclosureURL = [NSURL URLWithString:[attributeDict objectForKey:@"url"]];
+        self.currentEntry.enclosureURL = [NSURL URLWithString:attributeDict[@"url"]];
     }
     
     self.currentString = nil;
@@ -140,6 +168,7 @@
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
 {
+    // TODO switch?
     if ([elementName isEqualToString:@"item"]) {
         [self.entries addObject:self.currentEntry];
         self.currentEntry = nil;
@@ -147,6 +176,8 @@
         self.currentEntry.title = self.currentString;
     } else if ([elementName isEqualToString:@"link"]) {
         self.currentEntry.link = [NSURL URLWithString:self.currentString];
+    } else if ([elementName isEqualToString:@"itunes:subtitle"]) {
+        self.currentEntry.subtitle = self.currentString;
     }
     
     self.currentString = nil;
@@ -171,10 +202,15 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    // TODO switch?
     if ([segue.identifier isEqualToString:@"PushToDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         CREEntry *entry = self.entries[indexPath.row];
         [segue.destinationViewController setEntry:entry];
+    } else if ([segue.identifier isEqualToString:@"PushToMedia"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        CREEntry *entry = self.entries[indexPath.row];
+        [segue.destinationViewController setEnclosureURL:entry.enclosureURL];
     }
 }
 

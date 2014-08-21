@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface CREEntry : NSObject
-
-@property (strong) NSString *title;
-@property (strong) NSURL *link;
-
+    @property (strong) NSString *title;
+    @property (strong) NSURL *link;
+    @property (strong) NSString *subtitle;
+    @property (strong) NSURL *enclosureURL;
 @end

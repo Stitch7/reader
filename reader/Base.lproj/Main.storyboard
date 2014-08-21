@@ -46,7 +46,7 @@
                                             <rect key="frame" x="15" y="25" width="43" height="15"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -166,29 +166,38 @@
         <scene sceneID="iDI-g2-eeE">
             <objects>
                 <tableViewController id="i5A-si-oNA" customClass="CREEntriesTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="wza-ra-zXE">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="22" sectionFooterHeight="22" id="wza-ra-zXE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EntryCell" textLabel="64o-nh-d1p" style="IBUITableViewCellStyleDefault" id="MKV-JF-FKm">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EntryCell" rowHeight="90" id="MKV-JF-FKm" customClass="CREEntryCell">
+                                <rect key="frame" x="0.0" y="86" width="320" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MKV-JF-FKm" id="bbA-J7-jr4">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="253" height="89"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="64o-nh-d1p">
-                                            <rect key="frame" x="15" y="0.0" width="270" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6AM-2d-K9f">
+                                            <rect key="frame" x="10" y="10" width="243" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="243" translatesAutoresizingMaskIntoConstraints="NO" id="gOV-Tf-Kv0">
+                                            <rect key="frame" x="10" y="28" width="243" height="56"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Ah7-4n-0Wa" kind="push" identifier="PushToDetail" id="yWy-Xa-z0i"/>
+                                    <outlet property="subtitleLabel" destination="gOV-Tf-Kv0" id="syB-bG-cAQ"/>
+                                    <outlet property="titleLabel" destination="6AM-2d-K9f" id="lpt-hI-olc"/>
+                                    <segue destination="Ah7-4n-0Wa" kind="push" identifier="PushToDetail" trigger="accessoryAction" id="IIv-aX-hgV"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -202,6 +211,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LtC-C6-QK6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="907" y="64"/>
+        </scene>
+        <!--Media View Controller-->
+        <scene sceneID="JFF-9f-q9e">
+            <objects>
+                <viewController id="2jB-k4-iEo" customClass="CREMediaViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2jO-WO-DN1"/>
+                        <viewControllerLayoutGuide type="bottom" id="jsb-ff-wRw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wG9-ig-4nJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hej-iY-P9x"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kfg-am-CVP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1333" y="-537"/>
         </scene>
         <!--Detail View Controller - Detail-->
         <scene sceneID="Cn3-H9-jdl">
