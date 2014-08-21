@@ -14,7 +14,7 @@
 		3009AA4319A0CA470007E362 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3009AA4219A0CA470007E362 /* main.m */; };
 		3009AA4719A0CA470007E362 /* CREAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3009AA4619A0CA470007E362 /* CREAppDelegate.m */; };
 		3009AA4A19A0CA470007E362 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3009AA4819A0CA470007E362 /* Main.storyboard */; };
-		3009AA4D19A0CA470007E362 /* CREMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3009AA4C19A0CA470007E362 /* CREMasterViewController.m */; };
+		3009AA4D19A0CA470007E362 /* CREFeedsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3009AA4C19A0CA470007E362 /* CREFeedsTableViewController.m */; };
 		3009AA5019A0CA470007E362 /* CREDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3009AA4F19A0CA470007E362 /* CREDetailViewController.m */; };
 		3009AA5219A0CA470007E362 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3009AA5119A0CA470007E362 /* Images.xcassets */; };
 		3009AA5919A0CA470007E362 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3009AA5819A0CA470007E362 /* XCTest.framework */; };
@@ -22,6 +22,10 @@
 		3009AA5B19A0CA470007E362 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3009AA3A19A0CA470007E362 /* UIKit.framework */; };
 		3009AA6319A0CA470007E362 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3009AA6119A0CA470007E362 /* InfoPlist.strings */; };
 		3009AA6519A0CA470007E362 /* readerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3009AA6419A0CA470007E362 /* readerTests.m */; };
+		303B53DB19A252F600845613 /* CREEntriesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 303B53DA19A252F600845613 /* CREEntriesTableViewController.m */; };
+		303B53E219A2552000845613 /* CREFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 303B53E119A2552000845613 /* CREFeed.m */; };
+		303B53E519A25FEC00845613 /* CREEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 303B53E419A25FEC00845613 /* CREEntry.m */; };
+		30FC42EE19A4A03000CA025D /* CREAddFeedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FC42ED19A4A03000CA025D /* CREAddFeedTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,8 +50,8 @@
 		3009AA4519A0CA470007E362 /* CREAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CREAppDelegate.h; sourceTree = "<group>"; };
 		3009AA4619A0CA470007E362 /* CREAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CREAppDelegate.m; sourceTree = "<group>"; };
 		3009AA4919A0CA470007E362 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3009AA4B19A0CA470007E362 /* CREMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CREMasterViewController.h; sourceTree = "<group>"; };
-		3009AA4C19A0CA470007E362 /* CREMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CREMasterViewController.m; sourceTree = "<group>"; };
+		3009AA4B19A0CA470007E362 /* CREFeedsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CREFeedsTableViewController.h; sourceTree = "<group>"; };
+		3009AA4C19A0CA470007E362 /* CREFeedsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CREFeedsTableViewController.m; sourceTree = "<group>"; };
 		3009AA4E19A0CA470007E362 /* CREDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CREDetailViewController.h; sourceTree = "<group>"; };
 		3009AA4F19A0CA470007E362 /* CREDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CREDetailViewController.m; sourceTree = "<group>"; };
 		3009AA5119A0CA470007E362 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -56,6 +60,14 @@
 		3009AA6019A0CA470007E362 /* readerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "readerTests-Info.plist"; sourceTree = "<group>"; };
 		3009AA6219A0CA470007E362 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3009AA6419A0CA470007E362 /* readerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = readerTests.m; sourceTree = "<group>"; };
+		303B53D919A252F600845613 /* CREEntriesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CREEntriesTableViewController.h; sourceTree = "<group>"; };
+		303B53DA19A252F600845613 /* CREEntriesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CREEntriesTableViewController.m; sourceTree = "<group>"; };
+		303B53E019A2552000845613 /* CREFeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CREFeed.h; sourceTree = "<group>"; };
+		303B53E119A2552000845613 /* CREFeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CREFeed.m; sourceTree = "<group>"; };
+		303B53E319A25FEC00845613 /* CREEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CREEntry.h; sourceTree = "<group>"; };
+		303B53E419A25FEC00845613 /* CREEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CREEntry.m; sourceTree = "<group>"; };
+		30FC42EC19A4A03000CA025D /* CREAddFeedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CREAddFeedTableViewController.h; sourceTree = "<group>"; };
+		30FC42ED19A4A03000CA025D /* CREAddFeedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CREAddFeedTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,15 +127,14 @@
 		3009AA3C19A0CA470007E362 /* reader */ = {
 			isa = PBXGroup;
 			children = (
+				303B53DF19A2544200845613 /* Controller */,
 				3009AA4519A0CA470007E362 /* CREAppDelegate.h */,
 				3009AA4619A0CA470007E362 /* CREAppDelegate.m */,
-				3009AA4819A0CA470007E362 /* Main.storyboard */,
-				3009AA4B19A0CA470007E362 /* CREMasterViewController.h */,
-				3009AA4C19A0CA470007E362 /* CREMasterViewController.m */,
-				3009AA4E19A0CA470007E362 /* CREDetailViewController.h */,
-				3009AA4F19A0CA470007E362 /* CREDetailViewController.m */,
 				3009AA5119A0CA470007E362 /* Images.xcassets */,
+				3009AA4819A0CA470007E362 /* Main.storyboard */,
+				303B53DC19A2542F00845613 /* Model */,
 				3009AA3D19A0CA470007E362 /* Supporting Files */,
+				303B53DD19A2543600845613 /* View */,
 			);
 			path = reader;
 			sourceTree = "<group>";
@@ -155,6 +166,39 @@
 				3009AA6119A0CA470007E362 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		303B53DC19A2542F00845613 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				303B53E019A2552000845613 /* CREFeed.h */,
+				303B53E119A2552000845613 /* CREFeed.m */,
+				303B53E319A25FEC00845613 /* CREEntry.h */,
+				303B53E419A25FEC00845613 /* CREEntry.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		303B53DD19A2543600845613 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		303B53DF19A2544200845613 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				30FC42EC19A4A03000CA025D /* CREAddFeedTableViewController.h */,
+				30FC42ED19A4A03000CA025D /* CREAddFeedTableViewController.m */,
+				3009AA4E19A0CA470007E362 /* CREDetailViewController.h */,
+				3009AA4F19A0CA470007E362 /* CREDetailViewController.m */,
+				303B53D919A252F600845613 /* CREEntriesTableViewController.h */,
+				303B53DA19A252F600845613 /* CREEntriesTableViewController.m */,
+				3009AA4B19A0CA470007E362 /* CREFeedsTableViewController.h */,
+				3009AA4C19A0CA470007E362 /* CREFeedsTableViewController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,9 +299,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30FC42EE19A4A03000CA025D /* CREAddFeedTableViewController.m in Sources */,
 				3009AA5019A0CA470007E362 /* CREDetailViewController.m in Sources */,
 				3009AA4319A0CA470007E362 /* main.m in Sources */,
-				3009AA4D19A0CA470007E362 /* CREMasterViewController.m in Sources */,
+				303B53E519A25FEC00845613 /* CREEntry.m in Sources */,
+				303B53E219A2552000845613 /* CREFeed.m in Sources */,
+				303B53DB19A252F600845613 /* CREEntriesTableViewController.m in Sources */,
+				3009AA4D19A0CA470007E362 /* CREFeedsTableViewController.m in Sources */,
 				3009AA4719A0CA470007E362 /* CREAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -463,6 +511,7 @@
 				3009AA6A19A0CA470007E362 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3009AA6B19A0CA470007E362 /* Build configuration list for PBXNativeTarget "readerTests" */ = {
 			isa = XCConfigurationList;
@@ -471,6 +520,7 @@
 				3009AA6D19A0CA470007E362 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

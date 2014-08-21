@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CREEntry.h"
 
-@interface CREDetailViewController : UIViewController
 
-@property (strong, nonatomic) id detailItem;
+@interface CREDetailViewController : UIViewController <UIWebViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+@property (strong, nonatomic) CREEntry *entry;
+
+- (void)setNewEntry:(CREEntry*)inEntry;
+
 @end
